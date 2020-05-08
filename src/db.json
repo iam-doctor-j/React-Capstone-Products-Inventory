@@ -1,0 +1,87 @@
+{
+  "products": [
+    {
+      "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+      "views": 8,
+      "name": {
+        "value": "Laptop",
+        "visible": true
+      },
+      "description": {
+        "value": "A simple Laptop",
+        "visible": true
+      },
+      "manufacturer": {
+        "value": "Lenovo",
+        "visible": true
+      },
+      "price": {
+        "value": 64999,
+        "visible": true
+      },
+      "quantity": {
+        "value": 1,
+        "visible": true
+      }
+    },
+    {
+      "id": "30bbcb51-9ab0-57b7-afce-034e0e9fb376",
+      "views": 9,
+      "name": {
+        "value": "Mobile Phone",
+        "visible": true
+      },
+      "description": {
+        "value": "A Smartphone",
+        "visible": true
+      },
+      "manufacturer": {
+        "value": "Realme",
+        "visible": true
+      },
+      "price": {
+        "value": 15000,
+        "visible": true
+      },
+      "quantity": {
+        "value": 3,
+        "visible": true
+      }
+    },
+    {
+      "id": "747b975e-007e-53b9-89ba-de0853c5083c",
+      "views": 2,
+      "name": {
+        "value": "TV",
+        "visible": true
+      },
+      "description": {
+        "value": "A smart TV",
+        "visible": true
+      },
+      "manufacturer": {
+        "value": "Samsung",
+        "visible": true
+      },
+      "price": {
+        "value": 49000,
+        "visible": true
+      },
+      "quantity": {
+        "value": 2,
+        "visible": true
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "jyotirmayasahu38@gmail.com",
+      "password": "P@ssword1",
+      "firstName": "Jyotirmaya",
+      "lastName": "Sahu",
+      "location": "ROU",
+      "mobNumber": "08895639457",
+      "id": 1
+    }
+  ]
+}

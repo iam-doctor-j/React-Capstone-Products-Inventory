@@ -1,0 +1,32 @@
+.menu-list {
+    list-style: none;
+}
+.card {
+    border: none;
+    border-radius: .15rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.card-subtitle {
+    font-size: 0.8rem;
+}
+.add-button {
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    opacity: 0.5;
+}
+.flex-center-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.product-link, .product-link:hover, .product-link:active, .product-link:visited {
+    color: inherit;
+    text-decoration: none;
+}

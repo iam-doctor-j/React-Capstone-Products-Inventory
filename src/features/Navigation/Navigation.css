@@ -1,0 +1,19 @@
+/* .navbar {
+    display: flex;
+    flex-direction: row;
+    height: 1.5rem;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 10px;
+} */
+.navbar-brand {
+    letter-spacing: 0.75rem;
+}
