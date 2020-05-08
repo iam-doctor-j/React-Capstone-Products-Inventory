@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { logout, refresh } from '../Authentication/AuthenticationSlice';
 import ProductDetails from '../ProductFeed/ProductDetails/ProductDetails';
 import UserProfile from '../Authentication/UserProfile/UserProfile';
+import { CSSTransition } from 'react-transition-group';
 
 function Navigation(props) {
     // const [_, refresh] = useState({});
@@ -65,13 +66,13 @@ function Navigation(props) {
             </div>
         </nav>
         <Switch>
-            <Route exact path={routes.HOME} component={ProductFeed} />
-            <Route path={routes.REGISTER} component={Register} />
-            <Route path={routes.ADD_PRODUCTS} render={(props) => (isLoggedIn() ?<AddProduct {...props}/> : <Redirect to="/login" />)}/>
-            <Route path={routes.EDIT_PRODUCTS} render={(props) => (isLoggedIn() ?<EditProduct {...props}/> : <Redirect to="/login" />)} />
-            <Route path={routes.LOGIN} component={Login} />
-            <Route path={routes.DETAILS} component={ProductDetails} />
-            <Route path={routes.USER} component={UserProfile} />
+                <Route exact path={routes.HOME} component={ProductFeed} />
+                <Route path={routes.REGISTER} component={Register} />
+                <Route path={routes.ADD_PRODUCTS} render={(props) => (isLoggedIn() ?<AddProduct {...props}/> : <Redirect to="/login" />)}/>
+                <Route path={routes.EDIT_PRODUCTS} render={(props) => (isLoggedIn() ?<EditProduct {...props}/> : <Redirect to="/login" />)} />
+                <Route path={routes.LOGIN} component={Login} />
+                <Route path={routes.DETAILS} component={ProductDetails} />
+                <Route path={routes.USER} component={UserProfile} />
         </Switch>
         </Router>
         </>

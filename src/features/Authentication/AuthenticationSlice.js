@@ -50,15 +50,22 @@ export const login = (email, password, callback) => dispatch => {
     let user;
     axios.get('http://localhost:4000/users?email='+email)
          .then(res => {
-            user = res.data[0];
-            console.log(user)
-            if(user.password === password) {
-                console.log('login success');
-                
-                dispatch(onLogin({loggedIn: true, user}));
-            }
-            else
+            if(res.data.length === 0){
+                alert('Invalid Email');
                 dispatch(onLogin({loggedIn: false, user: null}));
+            } else {
+                user = res.data[0];
+                console.log(user)
+                if(user.password === password) {
+                    console.log('login success');
+                    
+                    dispatch(onLogin({loggedIn: true, user}));
+                } else {
+                    alert('Incorrect Password')
+                    dispatch(onLogin({loggedIn: false, user: null}));
+                }
+            }
+            
             callback();
          })
          .catch(err => {throw err});

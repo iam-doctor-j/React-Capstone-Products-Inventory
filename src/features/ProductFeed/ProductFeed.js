@@ -9,17 +9,6 @@ import { productSelector, fetchProductsFromDb, deleteProductFromDb } from './Pro
 import routes from '../../constants/routes';
 import Product from './Product/Product';
 
-// function ProductFeed() {
-//     const products = useSelector(productSelector);
-//     const dispatch = useDispatch();
-//     const [productsState, setProductsState] = useState({products: []});
-//     const productsList = productsState.
-
-//     return(
-        
-//     );
-// }
-
 class ProductFeed extends React.Component {
     constructor(props) {
         super(props);

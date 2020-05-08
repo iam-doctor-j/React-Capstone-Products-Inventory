@@ -111,6 +111,7 @@ const AddProduct = withFormik({
         console.log(props);
         let product = {
             "id": fromString(JSON.stringify(values)+Date.now().toString()),
+            "views": 0,
             "name": {
                 "value": values.prodName,
                 "visible": true,

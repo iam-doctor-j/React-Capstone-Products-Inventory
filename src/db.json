@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
-      "views": 8,
+      "views": 1,
       "name": {
         "value": "Laptop",
         "visible": true
@@ -26,7 +26,7 @@
     },
     {
       "id": "30bbcb51-9ab0-57b7-afce-034e0e9fb376",
-      "views": 9,
+      "views": 1,
       "name": {
         "value": "Mobile Phone",
         "visible": true
@@ -69,6 +69,30 @@
       },
       "quantity": {
         "value": 2,
+        "visible": true
+      }
+    },
+    {
+      "id": "388c789a-b1a0-536d-be15-4781df0e36b1",
+      "views": 2,
+      "name": {
+        "value": "Radio",
+        "visible": true
+      },
+      "description": {
+        "value": "An old Radio",
+        "visible": true
+      },
+      "manufacturer": {
+        "value": "Saregama",
+        "visible": true
+      },
+      "price": {
+        "value": 1200,
+        "visible": true
+      },
+      "quantity": {
+        "value": 3,
         "visible": true
       }
     }
