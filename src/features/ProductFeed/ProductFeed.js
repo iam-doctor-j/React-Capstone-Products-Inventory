@@ -1,49 +1,73 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Plus from '../../assets/svgs/solid/plus.svg';
 import './ProductFeed.css';
 import * as _ from 'lodash';
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { productSelector, fetchProductsFromDb, deleteProductFromDb } from './ProductFeedSlice';
-import routes from '../../constants/routes';
+import { connect } from 'react-redux';
+import { fetchProductsFromDb, addProductToDeleteListFirst, removeProductToDeleteListFirst, searchProducts } from './ProductFeedSlice';
 import Product from './Product/Product';
+import FloatingDeleteButton from '../FloatingDeleteButton/FloatingDeleteButton';
 
 class ProductFeed extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        this.searchText = React.createRef();
     }
-
+    
     componentDidMount() {
-        console.log('Did Mount')
         if(this.props.products.length === 0)
             this.props.dispatch(fetchProductsFromDb());
     }
 
+    addToDeleteList = (product) => {
+        this.props.dispatch(addProductToDeleteListFirst(product));
+    }
+
+    removeFromDeleteList = (id) => {
+        this.props.dispatch(removeProductToDeleteListFirst(id));
+    }
+
+    isInDeleteList = (id) => {
+        if(this.props.deleteList.length === 0)
+            return false;
+        let arr = _.find(this.props.deleteList, prod => prod.id === id);
+        if(!arr)
+            return false;
+        else 
+            return true;
+    } 
+
+    handleSearchOver = ({target}) => {
+        if(target.value === '') {
+            this.props.dispatch(fetchProductsFromDb());
+        }
+    }
+
     render() {
+        
         let productList = this.props.products && this.props.products.map((product, i) => {
             return(
                 <li key={product.id}>
-                    <Product {...this.props} index={i}/>
+                    <Product {
+                        ...{
+                            ...this.props, 
+                            addToDeleteList: this.addToDeleteList, 
+                            removeFromDeleteList: this.removeFromDeleteList,
+                            isInDeleteList: this.isInDeleteList(product.id)
+                        }
+                    } 
+                    index={i}
+                    />
                 </li>
             );
-        })
-        let chartItems = this.props.products && 
-                        _.orderBy(this.props.products, ['views'], ['desc'])
-                        .slice(0, this.props.products.length >= 5 ? 5 : this.props.products.length);
-        console.log(chartItems);
-        
-        let chartedList = chartItems.map((product, i) => {
-                return(
-                    <li key={product.id}>
-                        <Product {...this.props} chartedList={chartItems} index={i}/>
-                    </li>
-                )
         });
         return(
-            <div className="container">
-                <div>
+            <div className="container h-100">
+                <FloatingDeleteButton {...this.props}/>
+            
+                <div className="row mt-3">
+                    <div className="col-12 col-md-6">
                     <Link title="Add New Product" to="/add">
                         <Card>
                             <Card.Body className="flex-center-child">
@@ -51,17 +75,18 @@ class ProductFeed extends React.Component {
                             </Card.Body>
                         </Card>
                     </Link>
+                    </div>
+                    <div className="col-12 col-md-6">
+                    <Card>
+                        <Card.Body className="form-inline d-flex">
+                            <input type="text" className="form-control search-box flex-grow-1" ref={this.searchText} placeholder="search products" onChange={this.handleSearchOver}/>
+                            <button className="btn btn-link text-secondary" onClick={() => this.props.dispatch(searchProducts(this.searchText.current.value))}><i className="fas fa-search"></i></button>
+                        </Card.Body>
+                    </Card>
+                    </div>
                 </div>
-                <div className="heading-text mt-5">Top {chartItems.length} Viewed Products</div>
-                <div>
-                    {
-                        chartItems.length !== 0 &&
-                            <ul style={{listStyle: 'none', padding: 0}}>
-                                { chartedList }
-                            </ul>
-                    }
-                </div>
-                <div className="heading-text mt-5">All products</div>
+                
+                <div className="heading-text mt-3">All products</div>
                 <div>
                     { productList.length !== 0  && 
                         <ul style={{listStyle: 'none', padding: 0}}>
@@ -75,11 +100,10 @@ class ProductFeed extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log('map state to props');
-    console.log(state);
     return {
         products: state.productFeed.products,
-        loggedIn: state.auth.loggedIn
+        loggedIn: state.auth.loggedIn,
+        deleteList: state.productFeed.deleteList,
     }
 }
 

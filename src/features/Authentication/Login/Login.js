@@ -1,15 +1,13 @@
 import React from 'react';
 import { Form, Field, withFormik } from 'formik';
-import loading from '../../../assets/loading.svg';
-// import { login } from '../authProvider';
 import { connect } from 'react-redux';
-import { login } from '../AuthenticationSlice';
+import { login, refresh } from '../AuthenticationSlice';
 import Card from 'react-bootstrap/Card';
 import * as Yup from 'yup';
+import routes from '../../../constants/routes';
 
 const LoginForm = (props) => {
-    const {errors, touched, isSubmitting} = props;
-    console.log(props);
+    const {errors, touched, isSubmitting, error} = props;
     return(
         <div className="container">
         <div className="row justify-content-center">
@@ -19,21 +17,23 @@ const LoginForm = (props) => {
                     <Card.Title>
                     <div className="d-flex">
                         <span className="heading-text">Login</span>
-                        <a className="ml-auto" onClick={props.history.goBack} style={{cursor: 'pointer', color: 'var(--secondary)'}}><i className="fas fa-arrow-circle-left"></i></a>
+                        <a className="ml-auto" onClick={() => {props.dispatch(refresh()); props.history.goBack()}} style={{cursor: 'pointer', color: 'var(--secondary)'}}><i className="fas fa-arrow-circle-left"></i></a>
                     </div>
                     </Card.Title>
                     <Form>
                         <div className="form-group">
-                            <label className="lable-text">Email</label>
+                            <label className="label-text">Email</label>
                             <Field className="form-control" type="text" name="email" placeholder="Enter Username"/>
-                            {touched.email && errors.email && <span style={{color: 'red'}}>{errors.email}</span> }
+                            {touched.email && errors.email && <span className="label-text" style={{color: 'red'}}>{errors.email}</span> }
                         </div>
                         <div className="form-group">
-                            <label className="lable-text">Password</label>
+                            <label className="label-text">Password</label>
                             <Field className="form-control" type="password" name="password" placeholder="Enter password"/>
-                            {touched.password && errors.password && <span style={{color: 'red'}}>{errors.password}</span> }
+                            {touched.password && errors.password && <span className="label-text" style={{color: 'red'}}>{errors.password}</span> }
                         </div>
-                        <button className="btn btn-secondary" type="submit" disabled={isSubmitting}>{!isSubmitting ? <span>Login</span> : <span>Logging in...</span>}</button>
+                        <button className="btn btn-secondary label-text" type="submit" disabled={isSubmitting}>{!isSubmitting ? <span>Login</span> : <span>Logging in...</span>}</button>
+                        <br/>
+                        {error && <span className="label-text" style={{color: 'red'}}>{error}</span>}
                     </Form>
                 </Card.Body>
             </Card>
@@ -54,13 +54,17 @@ const Login = withFormik({
         password: Yup.string().required('Password is required'),
     }),
     handleSubmit(values, { resetForm, setSubmitting, setErrors, props }) {
-        console.log(values);
         props.dispatch(login(values.email, values.password, () => {
-            props.history.goBack();
+            setSubmitting(false);
+            props.history.replace(routes.HOME);
+        }, () => {
+            setSubmitting(false);
         }));
     }
 })(LoginForm);
 
 export default connect(state => {
-    return {}
+    return {
+        error: state.auth.error
+    }
 })(Login);

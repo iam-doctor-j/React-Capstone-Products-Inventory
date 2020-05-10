@@ -1,0 +1,26 @@
+.circle {
+    border-radius: 50%;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
+    padding: 1rem;
+}
+.floating-bottom {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    z-index: 10000;
+}
+.far {
+    height: 0.5rem;
+    width: 1.5rem;
+}
+
+/* @media only screen and (max-width: 550px) {
+    .floating-bottom {
+        left: 75%;
+    }
+}
+@media only screen and (min-width: 550px) and (max-width: 850px) {
+    .floating-bottom {
+        left: 85%;
+    }
+} */

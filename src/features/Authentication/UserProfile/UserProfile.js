@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import Card from "react-bootstrap/Card";
 import { connect } from "react-redux";
-import { logggedUser, refresh } from "../AuthenticationSlice";
+import { refresh } from "../AuthenticationSlice";
 
 function UserProfile(props) {
-    console.log(props);
     
     useEffect(() => {
         if(!props.user)
@@ -51,7 +50,6 @@ function UserProfile(props) {
 
 export default connect(state => {
     let user = null;
-    console.log(state)
     if(state.auth.user) {
         user = state.auth.user;
     }

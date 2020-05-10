@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
-      "views": 1,
+      "views": 6,
       "name": {
         "value": "Laptop",
         "visible": true
@@ -25,14 +25,14 @@
       }
     },
     {
-      "id": "30bbcb51-9ab0-57b7-afce-034e0e9fb376",
-      "views": 1,
+      "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+      "views": 0,
       "name": {
         "value": "Mobile Phone",
         "visible": true
       },
       "description": {
-        "value": "A Smartphone",
+        "value": "Smartphone",
         "visible": true
       },
       "manufacturer": {
@@ -44,55 +44,30 @@
         "visible": true
       },
       "quantity": {
-        "value": 3,
+        "value": 1,
         "visible": true
       }
     },
     {
-      "id": "747b975e-007e-53b9-89ba-de0853c5083c",
-      "views": 2,
+      "id": "8b91ff1c-808f-5151-9fe7-7b8cf0a0e295",
       "name": {
         "value": "TV",
         "visible": true
       },
       "description": {
-        "value": "A smart TV",
+        "value": "Samrt Tv",
         "visible": true
       },
       "manufacturer": {
         "value": "Samsung",
-        "visible": true
+        "visible": false
       },
       "price": {
-        "value": 49000,
-        "visible": true
+        "value": 50000,
+        "visible": false
       },
       "quantity": {
         "value": 2,
-        "visible": true
-      }
-    },
-    {
-      "id": "388c789a-b1a0-536d-be15-4781df0e36b1",
-      "views": 2,
-      "name": {
-        "value": "Radio",
-        "visible": true
-      },
-      "description": {
-        "value": "An old Radio",
-        "visible": true
-      },
-      "manufacturer": {
-        "value": "Saregama",
-        "visible": true
-      },
-      "price": {
-        "value": 1200,
-        "visible": true
-      },
-      "quantity": {
-        "value": 3,
         "visible": true
       }
     }

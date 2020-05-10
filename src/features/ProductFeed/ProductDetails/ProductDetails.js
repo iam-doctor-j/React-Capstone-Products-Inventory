@@ -54,8 +54,6 @@ class ProductDetails extends React.Component {
 }
 
 export default connect((state, ownProps) => {
-    console.log(ownProps);
-    console.log(state);
     let id = ownProps.match.params.id;
     let product;
     if(state.productFeed.products && state.productFeed.products.length!==0) {

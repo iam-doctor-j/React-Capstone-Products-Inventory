@@ -1,20 +1,19 @@
 import React from 'react';
 import { Form, Field, withFormik } from 'formik';
-import { uuid, fromString } from 'uuidv4';
+import { fromString } from 'uuidv4';
 import './EditProduct.css'
 import { connect } from 'react-redux';
 import * as Yup from 'yup';
 import * as _ from 'lodash';
 import { fetchProductsFromDb, editProductToDb } from '../ProductFeedSlice';
 import Card from 'react-bootstrap/Card';
+import { toast } from 'react-toastify';
 
 const EditProductForm = (props) => {
     const {touched, errors, isSubmitting} = props;
-    console.log(props);
     return(
         <div className="container">
         <div className="row justify-content-center">
-            {/* <h1>Edit Product</h1> */}
             <Card className="col-12 col-md-8 col-lg-6">
                 <Card.Body>
                     <Card.Title>
@@ -28,17 +27,17 @@ const EditProductForm = (props) => {
                         <div className="form-group">
                             <label className="label-text">Product Name</label>
                             <Field className="form-control" type="text" name="prodName" placeholder="Enter Product Name" />
-                            {touched.prodName && errors.prodName && <span style={{color: 'red'}}>{errors.prodName}</span>}
+                            {touched.prodName && errors.prodName && <span className="label-text" style={{color: 'red'}}>{errors.prodName}</span>}
                         </div>
                         <div className="form-group">
                             <label className="label-text">Product Description</label>
                             <Field className="form-control" type="text" component="textarea" name="prodDesc" placeholder="Enter Product Description" />
-                            {touched.prodDesc && errors.prodDesc && <span style={{color: 'red'}}>{errors.prodDesc}</span>}
+                            {touched.prodDesc && errors.prodDesc && <span className="label-text" style={{color: 'red'}}>{errors.prodDesc}</span>}
                         </div>
                         <div className="form-group">
                             <label className="label-text">Product Manufacturer</label>
                             <Field className="form-control" type="text" name="manufacturer" placeholder="Enter Product manufacturer" />
-                            {touched.manufacturer && errors.manufacturer && <span style={{color: 'red'}}>{errors.manufacturer}</span>}
+                            {touched.manufacturer && errors.manufacturer && <span className="label-text" style={{color: 'red'}}>{errors.manufacturer}</span>}
                         </div>
                         <div className="form-group">
                             <label className="label-text">Price</label>
@@ -48,12 +47,12 @@ const EditProductForm = (props) => {
                                 </div>
                             <Field className="form-control" type="number" name="price" placeholder="Enter Price" />
                             </div>
-                            {touched.price && errors.price && <span style={{color: 'red'}}>{errors.price}</span>}
+                            {touched.price && errors.price && <span className="label-text" style={{color: 'red'}}>{errors.price}</span>}
                         </div>
                         <div className="form-group">
                             <label className="label-text">Quantity</label>
                             <Field className="form-control" type="text" name="quantity" placeholder="Enter Quantity" />
-                            {touched.quantity && errors.quantity && <span style={{color: 'red'}}>{errors.quantity}</span>}
+                            {touched.quantity && errors.quantity && <span className="label-text" style={{color: 'red'}}>{errors.quantity}</span>}
                         </div>
                         <div className="mb-4">
                             <p className="label-text">Toggle visibility</p>
@@ -106,9 +105,7 @@ const EditProductForm = (props) => {
 
 const EditProduct = withFormik({
     mapPropsToValues(props) {
-        console.log('mappropstovalues');
-        console.log(props);
-        if(props.products.length == 0){
+        if(props.products.length === 0){
             props.dispatch(fetchProductsFromDb());
             return {
                 prodName: '',
@@ -126,7 +123,6 @@ const EditProduct = withFormik({
         let product = _.find(props.products, prod => {
             return prod.id === props.match.params.id
         });
-        console.log(product);
         return {
             prodName: product.name.value,
             prodDesc: product.description.value,
@@ -148,7 +144,6 @@ const EditProduct = withFormik({
         quantity: Yup.number().min(1, 'Quantity should be atleast 1').required('This field is required')
     }),
     handleSubmit(values, {setSubmitting, props}) {
-        console.log(props);
         let product = {
             "id": fromString(JSON.stringify(values)+Date.now().toString()),
             "name": {
@@ -172,14 +167,16 @@ const EditProduct = withFormik({
                 "visible": values.quantityVisibility || false,
             },
         };
-        console.log(product);
-        props.dispatch(editProductToDb(props.match.params.id, product));
+        props.dispatch(editProductToDb(props.match.params.id, product, () => {
+            setSubmitting(false);
+            toast.success('Saved Successfully!')
+            props.history.goBack();
+        }));
     },
     enableReinitialize: true
 })(EditProductForm);
 
 export default connect(state => {
-    console.log(state);
     return {
         products: state.productFeed.products
     }
