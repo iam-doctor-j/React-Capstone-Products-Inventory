@@ -6,6 +6,7 @@ const routes = {
     REGISTER: '/register',
     DETAILS: '/details/:id',
     USER: '/user',
+    CHART: '/chart',
 }
 
 export default Object.freeze(routes);

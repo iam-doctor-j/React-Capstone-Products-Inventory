@@ -5,6 +5,7 @@ import { login, refresh } from '../AuthenticationSlice';
 import Card from 'react-bootstrap/Card';
 import * as Yup from 'yup';
 import routes from '../../../constants/routes';
+import { toast } from 'react-toastify';
 
 const LoginForm = (props) => {
     const {errors, touched, isSubmitting, error} = props;
@@ -12,7 +13,6 @@ const LoginForm = (props) => {
         <div className="container">
         <div className="row justify-content-center">
             <Card className="col-12 col-md-8 col-lg-6">
-                {/* <h1>Login</h1> */}
                 <Card.Body>
                     <Card.Title>
                     <div className="d-flex">
@@ -56,9 +56,11 @@ const Login = withFormik({
     handleSubmit(values, { resetForm, setSubmitting, setErrors, props }) {
         props.dispatch(login(values.email, values.password, () => {
             setSubmitting(false);
+            toast.success('Logged in successfully!');
             props.history.replace(routes.HOME);
         }, () => {
             setSubmitting(false);
+            toast.error('Login Failed');
         }));
     }
 })(LoginForm);

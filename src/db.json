@@ -26,7 +26,7 @@
     },
     {
       "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
-      "views": 0,
+      "views": 3,
       "name": {
         "value": "Mobile Phone",
         "visible": true
@@ -49,25 +49,50 @@
       }
     },
     {
-      "id": "8b91ff1c-808f-5151-9fe7-7b8cf0a0e295",
+      "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+      "views": 4,
       "name": {
-        "value": "TV",
+        "value": "Computer",
         "visible": true
       },
       "description": {
-        "value": "Samrt Tv",
+        "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
         "visible": true
       },
       "manufacturer": {
-        "value": "Samsung",
-        "visible": false
+        "value": "HP",
+        "visible": true
       },
       "price": {
-        "value": 50000,
-        "visible": false
+        "value": 35000,
+        "visible": true
       },
       "quantity": {
-        "value": 2,
+        "value": 1,
+        "visible": false
+      }
+    },
+    {
+      "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+      "views": 4,
+      "name": {
+        "value": "Radio",
+        "visible": true
+      },
+      "description": {
+        "value": "A old radio",
+        "visible": true
+      },
+      "manufacturer": {
+        "value": "Saregama",
+        "visible": true
+      },
+      "price": {
+        "value": 1200,
+        "visible": true
+      },
+      "quantity": {
+        "value": 10,
         "visible": true
       }
     }
@@ -81,6 +106,15 @@
       "location": "ROU",
       "mobNumber": "08895639457",
       "id": 1
+    },
+    {
+      "id": "cc8d98da-0c14-57f1-ac3d-baac71d268aa",
+      "email": "sahujyotirmaya@gmail.com",
+      "password": "Lockdown",
+      "firstName": "Sahu",
+      "lastName": "Jyotirmaya",
+      "location": "Bangalore",
+      "mobNumber": "8249078381"
     }
   ]
 }

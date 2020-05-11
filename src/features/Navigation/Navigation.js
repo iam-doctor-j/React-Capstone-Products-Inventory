@@ -4,7 +4,17 @@ import './Navigation.css';
 import routes from '../../constants/routes';
 import { connect } from 'react-redux';
 import { logout, refresh } from '../Authentication/AuthenticationSlice';
-import { ProductFeedLazy, ProductDetailsLazy, UserProfileLazy, RegisterLazy, LoginLazy, AddProductLazy, EditProductLazy } from '../../constants/LazyComponents';
+import { ProductFeedLazy, ProductDetailsLazy, UserProfileLazy, RegisterLazy, LoginLazy, AddProductLazy, EditProductLazy, ChartLazy } from '../../constants/LazyComponents';
+import { ReactComponent as Loader } from '../../assets/suspense.svg';
+import { toast } from 'react-toastify';
+
+const PlaceHolder = () => {
+    return(
+        <div className="container h-100 d-flex justify-content-center align-items-center">
+            <Loader />
+        </div>
+    )
+}
 
 function Navigation(props) {
     const {loggedIn} = props;
@@ -41,7 +51,7 @@ function Navigation(props) {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a title="Logout" className="nav-link" href="#" onClick={() => {props.dispatch(logout())}}>
+                        <a title="Logout" className="nav-link" href="#" onClick={() => {props.dispatch(logout(() => toast.warn('Logged out successfully!')))}}>
                             <i className="fas fa-sign-out-alt"></i>
                         </a>
                     </li>
@@ -51,7 +61,7 @@ function Navigation(props) {
                 </div>
             </div>
         </nav>
-        <React.Suspense fallback={<h1>Loading...</h1>}>
+        <React.Suspense fallback={<PlaceHolder />}>
         <Switch>
             <Route exact path={routes.HOME} component={ProductFeedLazy} />
             <Route path={routes.REGISTER} component={RegisterLazy} />
@@ -60,6 +70,7 @@ function Navigation(props) {
             <Route path={routes.LOGIN} component={LoginLazy} />
             <Route path={routes.DETAILS} component={ProductDetailsLazy} />
             <Route path={routes.USER} component={UserProfileLazy} />
+            <Route path={routes.CHART} component={ChartLazy} />
         </Switch>
         </React.Suspense>
         </Router>

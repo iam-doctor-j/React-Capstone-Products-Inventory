@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { fetchProductsFromDb, addProductToDeleteListFirst, removeProductToDeleteListFirst, searchProducts } from './ProductFeedSlice';
 import Product from './Product/Product';
 import FloatingDeleteButton from '../FloatingDeleteButton/FloatingDeleteButton';
+import routes from '../../constants/routes';
 
 class ProductFeed extends React.Component {
     constructor(props) {
@@ -85,7 +86,18 @@ class ProductFeed extends React.Component {
                     </Card>
                     </div>
                 </div>
-                
+                <div className="row mt-3">
+                    <div className="col-12">
+                        <Card>
+                            <Card.Body>
+                                <Link to={routes.CHART} className="btn btn-outline-secondary w-100 label-text">
+                                    top products chart
+                                    <i className="far fa-chart-bar ml-1"></i>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
                 <div className="heading-text mt-3">All products</div>
                 <div>
                     { productList.length !== 0  && 

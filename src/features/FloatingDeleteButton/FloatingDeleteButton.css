@@ -7,7 +7,7 @@
     position: fixed;
     bottom: 10%;
     right: 10%;
-    z-index: 10000;
+    z-index: 9998;
 }
 .far {
     height: 0.5rem;

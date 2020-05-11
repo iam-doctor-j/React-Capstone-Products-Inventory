@@ -6,6 +6,7 @@ import { fromString } from 'uuidv4';
 import { connect } from 'react-redux';
 import { register, refresh } from '../AuthenticationSlice';
 import routes from '../../../constants/routes';
+import { toast } from 'react-toastify';
 
 const RegisterForm = (props) => {
     const {touched, errors, isSubmitting, error} = props;
@@ -95,9 +96,11 @@ const Register = withFormik({
         }
         props.dispatch(register(user, () => {
             setSubmitting(false);
+            toast.success('Registration successfull!');
             props.history.replace(routes.HOME);
         }, () => {
             setSubmitting(false);
+            toast.error('Registration failed');
         }));
     }
 })(RegisterForm);
