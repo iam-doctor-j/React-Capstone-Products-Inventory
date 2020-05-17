@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Register using Full DOM rendering should render properly 1`] = `
+<WithFormik(RegisterForm)>
+  <Formik
+    handleSubmit={[Function]}
+    initialValues={
+      Object {
+        "email": "",
+        "firstName": "",
+        "lastName": "",
+        "location": "",
+        "mobNumber": "",
+        "password": "",
+      }
+    }
+    onSubmit={[Function]}
+    validationSchema={[Function]}
+  >
+    <RegisterForm
+      dirty={false}
+      errors={Object {}}
+      getFieldHelpers={[Function]}
+      getFieldMeta={[Function]}
+      getFieldProps={[Function]}
+      handleBlur={[Function]}
+      handleChange={[Function]}
+      handleReset={[Function]}
+      handleSubmit={[Function]}
+      initialErrors={Object {}}
+      initialTouched={Object {}}
+      initialValues={
+        Object {
+          "email": "",
+          "firstName": "",
+          "lastName": "",
+          "location": "",
+          "mobNumber": "",
+          "password": "",
+        }
+      }
+      isSubmitting={false}
+      isValid={true}
+      isValidating={false}
+      registerField={[Function]}
+      resetForm={[Function]}
+      setErrors={[Function]}
+      setFieldError={[Function]}
+      setFieldTouched={[Function]}
+      setFieldValue={[Function]}
+      setFormikState={[Function]}
+      setStatus={[Function]}
+      setSubmitting={[Function]}
+      setTouched={[Function]}
+      setValues={[Function]}
+      submitCount={0}
+      submitForm={[Function]}
+      touched={Object {}}
+      unregisterField={[Function]}
+      validateField={[Function]}
+      validateForm={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
+      validateOnMount={false}
+      values={
+        Object {
+          "email": "",
+          "firstName": "",
+          "lastName": "",
+          "location": "",
+          "mobNumber": "",
+          "password": "",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row justify-content-center"
+        >
+          <Card
+            body={false}
+            className="col-12 col-md-8 col-lg-6"
+          >
+            <div
+              className="col-12 col-md-8 col-lg-6 card"
+            >
+              <CardBody>
+                <div
+                  className="card-body"
+                >
+                  <CardTitle>
+                    <ForwardRef
+                      className="card-title"
+                    >
+                      <div
+                        className="card-title h5"
+                      >
+                        <div
+                          className="d-flex"
+                        >
+                          <span
+                            className="heading-text"
+                          >
+                            Add new product
+                          </span>
+                          <a
+                            className="ml-auto"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "var(--secondary)",
+                                "cursor": "pointer",
+                              }
+                            }
+                          >
+                            <i
+                              className="fas fa-arrow-circle-left"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </ForwardRef>
+                  </CardTitle>
+                  <Form>
+                    <form
+                      action="#"
+                      onReset={[Function]}
+                      onSubmit={[Function]}
+                    >
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          Email
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="email"
+                          placeholder="Enter email"
+                          type="text"
+                        >
+                          <input
+                            className="form-control"
+                            name="email"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter email"
+                            type="text"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          Password
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="password"
+                          placeholder="Enter password"
+                          type="password"
+                        >
+                          <input
+                            className="form-control"
+                            name="password"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter password"
+                            type="password"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          First Name
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="firstName"
+                          placeholder="Enter First Name"
+                          type="text"
+                        >
+                          <input
+                            className="form-control"
+                            name="firstName"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter First Name"
+                            type="text"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          Last Name
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="lastName"
+                          placeholder="Enter Last Name"
+                          type="text"
+                        >
+                          <input
+                            className="form-control"
+                            name="lastName"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter Last Name"
+                            type="text"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          Location
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="location"
+                          placeholder="Enter Location"
+                          type="text"
+                        >
+                          <input
+                            className="form-control"
+                            name="location"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter Location"
+                            type="text"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          className="label-text"
+                        >
+                          Mobile number
+                        </label>
+                        <Field
+                          className="form-control"
+                          name="mobNumber"
+                          placeholder="Enter Mobile Number"
+                          type="text"
+                        >
+                          <input
+                            className="form-control"
+                            name="mobNumber"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            placeholder="Enter Mobile Number"
+                            type="text"
+                            value=""
+                          />
+                        </Field>
+                      </div>
+                      <button
+                        className="btn btn-secondary"
+                        disabled={false}
+                        type="submit"
+                      >
+                        <span>
+                          Register
+                        </span>
+                      </button>
+                      <br />
+                    </form>
+                  </Form>
+                </div>
+              </CardBody>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </RegisterForm>
+  </Formik>
+</WithFormik(RegisterForm)>
+`;

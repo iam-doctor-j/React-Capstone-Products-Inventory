@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, NavLink, BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Link, NavLink, BrowserRouter as Router, Switch, Route, Redirect, Prompt } from 'react-router-dom';
 import './Navigation.css';
 import routes from '../../constants/routes';
 import { connect } from 'react-redux';
@@ -16,7 +16,7 @@ const PlaceHolder = () => {
     )
 }
 
-function Navigation(props) {
+export function Navigation(props) {
     const {loggedIn} = props;
     useEffect(() => {
         if(!loggedIn)

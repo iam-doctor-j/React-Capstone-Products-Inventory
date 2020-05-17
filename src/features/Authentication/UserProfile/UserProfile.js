@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import { connect } from "react-redux";
 import { refresh } from "../AuthenticationSlice";
 
-function UserProfile(props) {
+export function UserProfile(props) {
     
     useEffect(() => {
         if(!props.user)

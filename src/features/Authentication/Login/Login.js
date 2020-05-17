@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import routes from '../../../constants/routes';
 import { toast } from 'react-toastify';
 
-const LoginForm = (props) => {
+export const LoginForm = (props) => {
     const {errors, touched, isSubmitting, error} = props;
     return(
         <div className="container">
@@ -42,7 +42,7 @@ const LoginForm = (props) => {
     );
 };
 
-const Login = withFormik({
+export const Login = withFormik({
     mapPropsToValues(){
         return {
             email: '',

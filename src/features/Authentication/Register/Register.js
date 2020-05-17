@@ -8,7 +8,7 @@ import { register, refresh } from '../AuthenticationSlice';
 import routes from '../../../constants/routes';
 import { toast } from 'react-toastify';
 
-const RegisterForm = (props) => {
+export const RegisterForm = (props) => {
     const {touched, errors, isSubmitting, error} = props;
     return(
         <div className="container">
@@ -64,7 +64,7 @@ const RegisterForm = (props) => {
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
-const Register = withFormik({
+export const Register = withFormik({
     mapPropsToValues() {
         return {
             email: '',

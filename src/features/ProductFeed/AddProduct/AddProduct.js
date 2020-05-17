@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import { fromString } from 'uuidv4';
@@ -7,9 +7,24 @@ import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import { refresh } from '../../Authentication/AuthenticationSlice';
 import { toast } from 'react-toastify';
+import { Prompt } from 'react-router-dom';
 
+let isHalfFilled = false;
+let initialValues = null;
 const AddProductForm = (props) => {
-    const {touched, errors, isSubmitting} = props;
+    const {touched, errors, isSubmitting, values} = props;
+    if(initialValues === null) {
+        initialValues = JSON.stringify(values);
+    }
+    useEffect(() => {
+        console.log(initialValues)
+        if(JSON.stringify(values) !== initialValues) {
+            isHalfFilled = true;
+        } else {
+            isHalfFilled = false;
+        }
+    }, [values])
+
     return(
         <div className="container">
         <div className="row justify-content-center">
@@ -18,7 +33,22 @@ const AddProductForm = (props) => {
                     <Card.Title>
                     <div className="d-flex">
                         <span className="heading-text">Add new product</span>
-                        <a className="ml-auto" onClick={() => {props.dispatch(refresh()); props.history.goBack()}} style={{cursor: 'pointer', color: 'var(--secondary)'}}><i className="fas fa-arrow-circle-left"></i></a>
+                        <a className="ml-auto" 
+                        onClick={() => {
+                            if(isHalfFilled) {
+                                if(window.confirm('All data will be lost. Continue?')) {
+                                    props.dispatch(refresh()); 
+                                    props.history.goBack();
+                                }
+                            } else {
+                                props.dispatch(refresh()); 
+                                props.history.goBack()
+                            }
+                        }} 
+                        style={{cursor: 'pointer', color: 'var(--secondary)'}}
+                        >
+                            <i className="fas fa-arrow-circle-left"></i>
+                        </a>
                     </div>
                     
                     </Card.Title>
