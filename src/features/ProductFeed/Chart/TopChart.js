@@ -7,7 +7,7 @@ import { refresh } from '../../Authentication/AuthenticationSlice';
 import { fetchProductsFromDb } from '../ProductFeedSlice';
 import Form from 'react-bootstrap/Form'
 
-class TopChart extends React.Component {
+export class TopChart extends React.Component {
 
     constructor() {
         super();

@@ -10,7 +10,7 @@ import Product from './Product/Product';
 import FloatingDeleteButton from '../FloatingDeleteButton/FloatingDeleteButton';
 import routes from '../../constants/routes';
 
-class ProductFeed extends React.Component {
+export class ProductFeed extends React.Component {
     constructor(props) {
         super(props);
         this.searchText = React.createRef();

@@ -7,6 +7,7 @@ const routes = {
     DETAILS: '/details/:id',
     USER: '/user',
     CHART: '/chart',
+    ABOUT: '/about',
 }
 
 export default Object.freeze(routes);

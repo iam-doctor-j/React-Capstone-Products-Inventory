@@ -9,7 +9,7 @@ import { fetchProductsFromDb, editProductToDb } from '../ProductFeedSlice';
 import Card from 'react-bootstrap/Card';
 import { toast } from 'react-toastify';
 
-const EditProductForm = (props) => {
+export const EditProductForm = (props) => {
     const {touched, errors, isSubmitting} = props;
     return(
         <div className="container">
@@ -103,7 +103,7 @@ const EditProductForm = (props) => {
     );
 }
 
-const EditProduct = withFormik({
+export const EditProduct = withFormik({
     mapPropsToValues(props) {
         if(props.products.length === 0){
             props.dispatch(fetchProductsFromDb());

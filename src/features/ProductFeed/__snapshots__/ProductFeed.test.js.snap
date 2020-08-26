@@ -1,0 +1,656 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProductFeed with shallow rendering should render correctly 1`] = `
+<div
+  className="container h-100"
+>
+  <FloatingDeleteButton
+    deleteList={Array []}
+    dispatch={[Function]}
+    loggedIn={true}
+    products={
+      Array [
+        Object {
+          "description": Object {
+            "value": "A simple Laptop",
+            "visible": true,
+          },
+          "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+          "manufacturer": Object {
+            "value": "Lenovo",
+            "visible": true,
+          },
+          "name": Object {
+            "value": "Laptop",
+            "visible": true,
+          },
+          "price": Object {
+            "value": 64999,
+            "visible": true,
+          },
+          "quantity": Object {
+            "value": 1,
+            "visible": true,
+          },
+          "views": 6,
+        },
+        Object {
+          "description": Object {
+            "value": "Smartphone",
+            "visible": true,
+          },
+          "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+          "manufacturer": Object {
+            "value": "Realme",
+            "visible": true,
+          },
+          "name": Object {
+            "value": "Mobile Phone",
+            "visible": true,
+          },
+          "price": Object {
+            "value": 15000,
+            "visible": true,
+          },
+          "quantity": Object {
+            "value": 1,
+            "visible": true,
+          },
+          "views": 3,
+        },
+        Object {
+          "description": Object {
+            "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
+            "visible": true,
+          },
+          "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+          "manufacturer": Object {
+            "value": "HP",
+            "visible": true,
+          },
+          "name": Object {
+            "value": "Computer",
+            "visible": true,
+          },
+          "price": Object {
+            "value": 35000,
+            "visible": true,
+          },
+          "quantity": Object {
+            "value": 1,
+            "visible": false,
+          },
+          "views": 4,
+        },
+        Object {
+          "description": Object {
+            "value": "A old radio",
+            "visible": true,
+          },
+          "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+          "manufacturer": Object {
+            "value": "Saregama",
+            "visible": true,
+          },
+          "name": Object {
+            "value": "Radio",
+            "visible": true,
+          },
+          "price": Object {
+            "value": 1200,
+            "visible": true,
+          },
+          "quantity": Object {
+            "value": 10,
+            "visible": true,
+          },
+          "views": 4,
+        },
+      ]
+    }
+  />
+  <div
+    className="row mt-3"
+  >
+    <div
+      className="col-12 col-md-6"
+    >
+      <Link
+        title="Add New Product"
+        to="/add"
+      >
+        <Card
+          body={false}
+        >
+          <CardBody
+            className="flex-center-child"
+          >
+            <img
+              alt="Add Product"
+              className="add-button"
+              src="plus.svg"
+            />
+          </CardBody>
+        </Card>
+      </Link>
+    </div>
+    <div
+      className="col-12 col-md-6"
+    >
+      <Card
+        body={false}
+      >
+        <CardBody
+          className="form-inline d-flex"
+        >
+          <input
+            className="form-control search-box flex-grow-1"
+            onChange={[Function]}
+            placeholder="search products"
+            type="text"
+          />
+          <button
+            className="btn btn-link text-secondary"
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-search"
+            />
+          </button>
+        </CardBody>
+      </Card>
+    </div>
+  </div>
+  <div
+    className="row mt-3"
+  >
+    <div
+      className="col-12"
+    >
+      <Card
+        body={false}
+      >
+        <CardBody>
+          <Link
+            className="btn btn-outline-secondary w-100 label-text"
+            to="/chart"
+          >
+            top products chart
+            <i
+              className="far fa-chart-bar ml-1"
+            />
+          </Link>
+        </CardBody>
+      </Card>
+    </div>
+  </div>
+  <div
+    className="heading-text mt-3"
+  >
+    All products
+  </div>
+  <div>
+    <ul
+      style={
+        Object {
+          "listStyle": "none",
+          "padding": 0,
+        }
+      }
+    >
+      <li
+        key="63796e43-f23b-542e-99a7-11db520c7bb6"
+      >
+        <Product
+          addToDeleteList={[Function]}
+          deleteList={Array []}
+          dispatch={[Function]}
+          index={0}
+          isInDeleteList={false}
+          loggedIn={true}
+          products={
+            Array [
+              Object {
+                "description": Object {
+                  "value": "A simple Laptop",
+                  "visible": true,
+                },
+                "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+                "manufacturer": Object {
+                  "value": "Lenovo",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Laptop",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 64999,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 6,
+              },
+              Object {
+                "description": Object {
+                  "value": "Smartphone",
+                  "visible": true,
+                },
+                "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+                "manufacturer": Object {
+                  "value": "Realme",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Mobile Phone",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 15000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 3,
+              },
+              Object {
+                "description": Object {
+                  "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
+                  "visible": true,
+                },
+                "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+                "manufacturer": Object {
+                  "value": "HP",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Computer",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 35000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": false,
+                },
+                "views": 4,
+              },
+              Object {
+                "description": Object {
+                  "value": "A old radio",
+                  "visible": true,
+                },
+                "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+                "manufacturer": Object {
+                  "value": "Saregama",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Radio",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 1200,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 10,
+                  "visible": true,
+                },
+                "views": 4,
+              },
+            ]
+          }
+          removeFromDeleteList={[Function]}
+        />
+      </li>
+      <li
+        key="d8548a39-7a6a-5258-bf6c-92fde0dc21fa"
+      >
+        <Product
+          addToDeleteList={[Function]}
+          deleteList={Array []}
+          dispatch={[Function]}
+          index={1}
+          isInDeleteList={false}
+          loggedIn={true}
+          products={
+            Array [
+              Object {
+                "description": Object {
+                  "value": "A simple Laptop",
+                  "visible": true,
+                },
+                "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+                "manufacturer": Object {
+                  "value": "Lenovo",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Laptop",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 64999,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 6,
+              },
+              Object {
+                "description": Object {
+                  "value": "Smartphone",
+                  "visible": true,
+                },
+                "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+                "manufacturer": Object {
+                  "value": "Realme",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Mobile Phone",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 15000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 3,
+              },
+              Object {
+                "description": Object {
+                  "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
+                  "visible": true,
+                },
+                "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+                "manufacturer": Object {
+                  "value": "HP",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Computer",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 35000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": false,
+                },
+                "views": 4,
+              },
+              Object {
+                "description": Object {
+                  "value": "A old radio",
+                  "visible": true,
+                },
+                "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+                "manufacturer": Object {
+                  "value": "Saregama",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Radio",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 1200,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 10,
+                  "visible": true,
+                },
+                "views": 4,
+              },
+            ]
+          }
+          removeFromDeleteList={[Function]}
+        />
+      </li>
+      <li
+        key="cc61beb5-3315-5a82-9b34-da193d64a55c"
+      >
+        <Product
+          addToDeleteList={[Function]}
+          deleteList={Array []}
+          dispatch={[Function]}
+          index={2}
+          isInDeleteList={false}
+          loggedIn={true}
+          products={
+            Array [
+              Object {
+                "description": Object {
+                  "value": "A simple Laptop",
+                  "visible": true,
+                },
+                "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+                "manufacturer": Object {
+                  "value": "Lenovo",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Laptop",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 64999,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 6,
+              },
+              Object {
+                "description": Object {
+                  "value": "Smartphone",
+                  "visible": true,
+                },
+                "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+                "manufacturer": Object {
+                  "value": "Realme",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Mobile Phone",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 15000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 3,
+              },
+              Object {
+                "description": Object {
+                  "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
+                  "visible": true,
+                },
+                "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+                "manufacturer": Object {
+                  "value": "HP",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Computer",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 35000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": false,
+                },
+                "views": 4,
+              },
+              Object {
+                "description": Object {
+                  "value": "A old radio",
+                  "visible": true,
+                },
+                "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+                "manufacturer": Object {
+                  "value": "Saregama",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Radio",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 1200,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 10,
+                  "visible": true,
+                },
+                "views": 4,
+              },
+            ]
+          }
+          removeFromDeleteList={[Function]}
+        />
+      </li>
+      <li
+        key="32d9fd8f-91dd-5668-b003-83020ea5439f"
+      >
+        <Product
+          addToDeleteList={[Function]}
+          deleteList={Array []}
+          dispatch={[Function]}
+          index={3}
+          isInDeleteList={false}
+          loggedIn={true}
+          products={
+            Array [
+              Object {
+                "description": Object {
+                  "value": "A simple Laptop",
+                  "visible": true,
+                },
+                "id": "63796e43-f23b-542e-99a7-11db520c7bb6",
+                "manufacturer": Object {
+                  "value": "Lenovo",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Laptop",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 64999,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 6,
+              },
+              Object {
+                "description": Object {
+                  "value": "Smartphone",
+                  "visible": true,
+                },
+                "id": "d8548a39-7a6a-5258-bf6c-92fde0dc21fa",
+                "manufacturer": Object {
+                  "value": "Realme",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Mobile Phone",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 15000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": true,
+                },
+                "views": 3,
+              },
+              Object {
+                "description": Object {
+                  "value": "A desktop PC fully assembled with all components. Mouse and Keyboard included.",
+                  "visible": true,
+                },
+                "id": "cc61beb5-3315-5a82-9b34-da193d64a55c",
+                "manufacturer": Object {
+                  "value": "HP",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Computer",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 35000,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 1,
+                  "visible": false,
+                },
+                "views": 4,
+              },
+              Object {
+                "description": Object {
+                  "value": "A old radio",
+                  "visible": true,
+                },
+                "id": "32d9fd8f-91dd-5668-b003-83020ea5439f",
+                "manufacturer": Object {
+                  "value": "Saregama",
+                  "visible": true,
+                },
+                "name": Object {
+                  "value": "Radio",
+                  "visible": true,
+                },
+                "price": Object {
+                  "value": 1200,
+                  "visible": true,
+                },
+                "quantity": Object {
+                  "value": 10,
+                  "visible": true,
+                },
+                "views": 4,
+              },
+            ]
+          }
+          removeFromDeleteList={[Function]}
+        />
+      </li>
+    </ul>
+  </div>
+</div>
+`;

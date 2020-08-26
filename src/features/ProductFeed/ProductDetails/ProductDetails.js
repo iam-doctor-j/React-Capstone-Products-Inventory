@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as _ from 'lodash';
 import { fetchProductsFromDb, viewProductFromDb } from '../ProductFeedSlice';
 
-class ProductDetails extends React.Component {
+export class ProductDetails extends React.Component {
     
     componentDidMount() {
         this.props.dispatch(viewProductFromDb(this.props.match.params.id));

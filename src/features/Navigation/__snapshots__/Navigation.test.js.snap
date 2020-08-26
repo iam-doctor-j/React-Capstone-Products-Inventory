@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Navigation with Shallow Rendering Should render correctly 1`] = `
+<Fragment>
+  <BrowserRouter>
+    <nav
+      className="navbar navbar-light sticky-top bg-light navbar-expand-lg"
+    >
+      <div
+        className="container justify-content-start"
+      >
+        <Link
+          className="navbar-brand mr-auto"
+          to="/"
+        >
+          Products Inventory
+        </Link>
+        <div
+          className="ml-auto"
+        >
+          <ul
+            className="navbar-nav"
+          >
+            <li
+              className="nav-item"
+            >
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/login"
+              >
+                <span>
+                  Login 
+                  <i
+                    className="fas fa-sign-in-alt"
+                  />
+                </span>
+              </NavLink>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/register"
+              >
+                <span>
+                  Register 
+                  <i
+                    className="fas fa-user-plus"
+                  />
+                </span>
+              </NavLink>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                title="About"
+                to="/about"
+              >
+                <i
+                  className="fas fa-info-circle"
+                />
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <Suspense
+      fallback={<PlaceHolder />}
+    >
+      <Switch>
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/register"
+        />
+        <Route
+          path="/add"
+          render={[Function]}
+        />
+        <Route
+          path="/edit/:id"
+          render={[Function]}
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/login"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/details/:id"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/user"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/chart"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            }
+          }
+          path="/about"
+        />
+      </Switch>
+    </Suspense>
+  </BrowserRouter>
+</Fragment>
+`;

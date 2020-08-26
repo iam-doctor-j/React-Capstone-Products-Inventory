@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test About with shallow rendering should render correctly 1`] = `
+<Fragment>
+  <div
+    className="container"
+  >
+    <div
+      className="row justify-content-center"
+    >
+      <Card
+        body={false}
+        className="col-12 col-md-8 col-lg-6"
+      >
+        <CardBody>
+          <CardTitle>
+            <div
+              className="d-flex"
+            >
+              <span
+                className="heading-text"
+              >
+                About
+              </span>
+              <a
+                className="ml-auto"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "var(--secondary)",
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <i
+                  className="fas fa-arrow-circle-left"
+                />
+              </a>
+            </div>
+          </CardTitle>
+          <div>
+            <p>
+              Get a list of products, created by you or by others.
+            </p>
+            <p>
+              Add your own product, manage, delete and a lot of stuff.
+            </p>
+          </div>
+        </CardBody>
+      </Card>
+    </div>
+  </div>
+</Fragment>
+`;

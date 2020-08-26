@@ -8,3 +8,4 @@ export const AddProductLazy = lazy(() => import('../features/ProductFeed/AddProd
 export const EditProductLazy = lazy(() => import('../features/ProductFeed/EditProduct/EditProduct'));
 export const UserProfileLazy = lazy(() => import('../features/Authentication/UserProfile/UserProfile'));
 export const ChartLazy = lazy(() => import('../features/ProductFeed/Chart/TopChart'));
+export const AboutLazy = lazy(() => import('../features/About/About'));

@@ -4,7 +4,7 @@ import './Navigation.css';
 import routes from '../../constants/routes';
 import { connect } from 'react-redux';
 import { logout, refresh } from '../Authentication/AuthenticationSlice';
-import { ProductFeedLazy, ProductDetailsLazy, UserProfileLazy, RegisterLazy, LoginLazy, AddProductLazy, EditProductLazy, ChartLazy } from '../../constants/LazyComponents';
+import { ProductFeedLazy, ProductDetailsLazy, UserProfileLazy, RegisterLazy, LoginLazy, AddProductLazy, EditProductLazy, ChartLazy, AboutLazy } from '../../constants/LazyComponents';
 import { ReactComponent as Loader } from '../../assets/suspense.svg';
 import { toast } from 'react-toastify';
 
@@ -57,6 +57,11 @@ export function Navigation(props) {
                     </li>
                     </>
                     }
+                    <li className="nav-item">
+                        <NavLink to={routes.ABOUT} title="About" className="nav-link" activeClassName="active">
+                            <i className="fas fa-info-circle"></i>
+                        </NavLink>
+                    </li>
                     </ul>
                 </div>
             </div>
@@ -71,6 +76,7 @@ export function Navigation(props) {
             <Route path={routes.DETAILS} component={ProductDetailsLazy} />
             <Route path={routes.USER} component={UserProfileLazy} />
             <Route path={routes.CHART} component={ChartLazy} />
+            <Route path={routes.ABOUT} component={AboutLazy}/>
         </Switch>
         </React.Suspense>
         </Router>

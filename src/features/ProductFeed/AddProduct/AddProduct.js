@@ -11,7 +11,7 @@ import { Prompt } from 'react-router-dom';
 
 let isHalfFilled = false;
 let initialValues = null;
-const AddProductForm = (props) => {
+export const AddProductForm = (props) => {
     const {touched, errors, isSubmitting, values} = props;
     if(initialValues === null) {
         initialValues = JSON.stringify(values);
@@ -92,7 +92,7 @@ const AddProductForm = (props) => {
     );
 }
 
-const AddProduct = withFormik({
+export const AddProduct = withFormik({
     mapPropsToValues({productName, productDesc, productManufac, productPrice, productQuantity}) {
         return {
             prodName: productName || '',
